@@ -1,0 +1,43 @@
+.App__ImageLinkForm-header {
+    font-size: 2rem;
+    display: flex; 
+    justify-content: center; 
+    text-align: center;
+}
+
+.App__ImageLinkForm-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem; 
+}
+
+.App__ImageLinkForm-content {
+    display: flex; 
+    justify-content: center;
+    width: 400px;
+    padding: 40px;
+    box-shadow: 2px 2px 10px;
+    border-radius: 7px;
+}
+
+.App__ImageLinkForm-content-input {
+    height: 40px;
+    width: 70%; 
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.App__ImageLinkForm-content-button {
+    height: 40px;
+    width: 30%; 
+    border: none; 
+    color: white;
+    background-color: rgb(216, 158, 33);
+}
+
+.App__ImageLinkForm-content-button:hover {
+    transition: all .1s ease-in-out;
+    transform: scale(1.1)
+}

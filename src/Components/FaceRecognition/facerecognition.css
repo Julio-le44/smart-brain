@@ -1,0 +1,30 @@
+.App__FaceRecognition-container {
+    position: static;    
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    border: none;
+    outline: none;
+}
+
+.App__FaceRecognition-container2 {
+    position: relative;
+}
+
+.App__FaceRecognition-image {
+    width: 480px;
+    height: auto;
+}
+
+.App__FaceRecognition-box {
+    position: absolute;
+    box-shadow: 0 0 0 3px #149df2 inset;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    cursor: pointer;
+}
+
+
+
+

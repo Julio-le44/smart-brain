@@ -1,0 +1,15 @@
+.App__Rank-container {
+    color: white
+}
+
+.App__Rank-header {
+    display: flex; 
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.App__Rank-number {
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+}
