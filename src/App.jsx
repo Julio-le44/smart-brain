@@ -54,7 +54,7 @@ class App extends Component {
   }
 
   getInfo = () => {
-    fetch('http://localhost:3000/imageUrl', {
+    fetch('https://juliole-44-smart-brain-server.onrender.com/imageUrl', {
           method: 'post',
           headers: {'Content-Type': "application/json"},
           body: JSON.stringify({
@@ -66,7 +66,7 @@ class App extends Component {
     .then(result => {
       console.log(result)
       if(result) {
-        fetch('http://localhost:3000/image', {
+        fetch('https://juliole-44-smart-brain-server.onrender.com/image', {
           method: 'put',
           headers: {'Content-Type': "application/json"},
           body: JSON.stringify({
