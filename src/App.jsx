@@ -8,6 +8,7 @@ import ParticlesBackground from './Components/ParticlesBackground/ParticlesBackg
 import FaceRecognition from './Components/FaceRecognition/FaceRecognition'
 import SignIn from './Components/SignIn/SignIn';
 import Register from './Components/Register/Register';
+import DeleteForm from './Components/DeleteForm/DeleteForm';
 
 const initialState = {
   input: '',
@@ -108,7 +109,7 @@ class App extends Component {
   }
 
   onRouteChange = (change) => {
-    if(change === 'home') {
+    if(change === 'home' || change === 'delete') {
       this.setState({isSignedIn: true})
     } else {
       this.setState(initialState)
@@ -120,17 +121,20 @@ class App extends Component {
     return (
       <div className='App'>
         <ParticlesBackground />
-        <Navigation onRouteChange={this.onRouteChange} isSignedIn={this.state.isSignedIn}/> 
+        <Navigation onRouteChange={this.onRouteChange} isSignedIn={this.state.isSignedIn} route={this.state.route}/>
         {this.state.route === 'signin'? 
-            <SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange}/> :
+          <SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange}/> :
           (this.state.route === 'register'? 
             <Register onRouteChange={this.onRouteChange} loadUser={this.loadUser}/> : 
-            <>
-              <Logo /> 
-              <Rank name={this.state.user.name} entries={this.state.user.entries}/> 
-              <ImageLinkForm onInputChange={this.onInputChange} onSubmit={this.onSubmit}/>
-              <FaceRecognition imageURL={this.state.imageURL} data={this.state.data}/>
-            </>
+            (this.state.route === 'delete'?
+              <DeleteForm onRouteChange={this.onRouteChange} name={this.state.user.name}/> :
+                <>
+                  <Logo /> 
+                  <Rank name={this.state.user.name} entries={this.state.user.entries}/> 
+                  <ImageLinkForm onInputChange={this.onInputChange} onSubmit={this.onSubmit}/>
+                  <FaceRecognition imageURL={this.state.imageURL} data={this.state.data}/>
+                </>
+            )
           )
         }
       </div>
