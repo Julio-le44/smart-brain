@@ -17,7 +17,7 @@ class SignIn extends Component {
     }
     onSubmitSignIn = () => {
         fetch('https://juliole-44-smart-brain-server.onrender.com/signin', {
-            method: 'post',
+            method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
                 email: this.state.signInEmail,
@@ -29,8 +29,11 @@ class SignIn extends Component {
             if (data.id) {
                 this.props.loadUser(data)
                 this.props.onRouteChange('home')
+            } else {
+                console.log(data)
             }
         })
+        .catch(err => console.log('unable to signin'))
     }
     render() {
         return (

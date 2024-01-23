@@ -38,8 +38,9 @@ class DeleteForm extends Component {
             .then(response => response.json())
             .then(data => console.log(data))
             .then(() => {this.props.onRouteChange('signin')})
+            .catch(err => console.log('unable to delete this account'))
         } else {
-            console.log('wrong credentials')
+            alert('wrong credentials')
         }
     }
 

@@ -31,11 +31,11 @@ class Register extends Component {
         .then(response => response.json())
         .then((user) => {
             if (user) {
-                console.log(user)
                 this.props.loadUser(user)
                 this.props.onRouteChange('home')
             }
         })
+        .catch(err => alert('unable to register'))
     }
     onNameChange = (event) => {
         this.setState({name: event.target.value})
